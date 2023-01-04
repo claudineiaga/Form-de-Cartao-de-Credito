@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Form Cartão de Crédito</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div class="container" >   
+        <section class="card" id="card">
+            <div class="front">
+                <div class="brand-logo" id="brand-logo">                    
+                </div>
+                <img src="https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/chip-tarjeta.png" 
+                class="chip">
+                <div class="details">
+                    <div class="group" id="number">
+                        <p class="label">Numero</p>
+                        <p class="number">#### #### #### ####</p>
+                    </div>
+                    <div class="flexbox">
+                        <div class="group" id="name">
+                            <p class="label"> Nome </p>
+                            <p class="name">Clau Gonçalves</p>
+                        </div>
+                        <div class="group" id="expiration">
+                            <p class="label">Validade</p>
+                            <p class="expiration"> <span class="month">MM</span> / <span class="year">AA</span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="magnetic-bar"></div>
+                <div class="details">
+                    <div class="group" id="signature">
+                        <p class="label">Assinatura</p>
+                        <div class="signature">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="group" id="ccv">
+                        <p class="label">CCV</p>
+                        <p class="ccv"></p>
+                    </div>
+                </div>
+                <p class="legend">Pode chamar ele de roxinho. Além disso, 
+                    pode chamar também de moderno, gratuito e prático.</p>
+                <a href="#" class="bank-link">www.nubank.com</a>
+            </div>
+        </section>
+        <div class="container-btn">
+            <button class="btn-open-form" id="btn-open-form">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+        <form action="" id="card-form" class="card-form">
+            <div class="group">
+                <label for="inputNumber">Número</label>
+                <input type="text" id="inputNumber" maxlength="19" autocomplete="off">
+            </div>
+            <div class="group">
+                <label for="inputHolder">Nome</label>
+                <input type="text" id="inputHolder" maxlength="19" autocomplete="off">
+            </div>
+            <div class="flexbox">
+                <div class="group expire">
+                    <label for="selectMonth">Validade</label>
+                    <div class="flexbox">
+                        <div class="group-select">
+                            <select name="month" id="selectMonth">
+                                <option disabled selected> Mês </option>                                
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="group-select">
+                            <select name="year" id="selectYear">
+                                <option disabled selected> Ano </option>
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="group ccv">
+                    <label for="inputCCV">CVV</label>
+                    <input type="text" id="inputCCV" maxlength="3">
+                </div>
+            </div>
+            <button type="submit" class="btn-submit"> Enviar </button>
+        </form>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>

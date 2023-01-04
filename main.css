@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Scrollbar setup*/
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-track{
+  background: rgb(255, 200, 246);
+  margin-block: 0.25rem;
+  border-radius: 100vw;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background: rgb(145, 158, 173);
+    border-radius: 100vw;
+    border: .25rem solid rgb(255, 200, 246);
+  }
+
+/*General Styles*/
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url(imagem.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card {
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    color: #fff;
+    transition: .3s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 1.5rem;
+}
+
+.card.active {
+  transform: rotateY(180deg);
+}
+
+.card > div {
+    padding: 30px;
+    border-radius: 15px;
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px 10px rgba(0, 60, 134, 0.3);
+}
+
+.card .front {
+    width: 100%;
+    background: linear-gradient(
+    to bottom right,
+    rgb(155, 53, 206),
+    rgb(65, 3, 81));
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5),
+    -1 -1 2px #aaa,
+    1 1 2px #555;
+    backdrop-filter: blur(0.65rem);
+}
+
+.front .brand-logo {
+  text-align: right;
+  min-height: 50px;
+}
+
+.front .brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 80px;
+}
+
+.front .chip {
+  width: 100%;
+  max-width: 50px;
+  margin-bottom: 20px;
+}
+
+.front .group .label {
+  font-size: 16px;
+  color: rgb(246, 248, 249);
+  -webkit-text-stroke: 0.15px #000;
+  margin-bottom: 5px;
+}
+
+.front .group .number,
+.front .group .name,
+.front .group .expiration {
+  color: rgb(244, 240, 240);
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.front .flexbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back {
+  background: linear-gradient(
+    to bottom right,
+    rgb(183, 80, 235),
+    rgb(207, 142, 231));
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5),
+  -1 -1 2px #aaa,
+  1 1 2px #555;
+  backdrop-filter: blur(0.8rem);
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.back .magnetic-bar {
+  height: 40px;
+  background: #000;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.back .details {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back .details p {
+  margin-bottom: 5px;
+}
+
+.back .details #signature {
+  width: 70%;
+  color: #000; 
+}
+
+.back .details #signature .signature {
+  height: 40px;
+  background: repeating-linear-gradient(skyblue 0,
+  skyblue 5px, orange 5px, orange 10px);
+}
+
+.back .details #signature .signature p{
+  line-height: 30px;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  color: rgb(246, 242, 242);
+  font-size: 30px;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+
+.back .details #ccv {
+  width: 20%;
+  color: #000;
+}
+
+.back .details #ccv .ccv {
+  background: #fff;
+  height: 40px;
+  color: rgb(5, 4, 4);
+  padding: 10px;
+  text-align: center;
+}
+
+.back .legend {
+  font-size: 14px;
+  line-height: 24px;
+  color: black;
+}
+
+.back .bank-link {
+  font-size: 14px;
+  color: #000;
+}
+
+.container-btn .btn-open-form {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 20px;
+  background: #2364d2;
+  color: #fff;
+  position: relative;
+  top: -25px;
+  z-index: 3;
+  border-radius: 100%;
+  box-shadow: -5px 4px 8px rgba(24,56,182,0.4);
+  padding: 5px;
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.container-btn .btn-open-form:hover {
+  background: #1850b1;
+}
+
+.container-btn .btn-open-form.active {
+  transform: rotate(45deg);
+}
+
+.card-form {
+  background: rgb(194, 133, 234);
+  width: 100%;
+  max-width: 700px;
+  padding: 150px 30px 30px 30px;
+  border-radius: 10px;
+  position: relative;
+  top: -150px;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path .3s ease-out;
+}
+
+.card-form.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.card-form label {
+  display: block;
+  color: #00090e;
+  -webkit-text-stroke: 0.1px #6e7881;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.card-form  input,
+.card-form  select,
+.btn-submit {
+  border: 2px solid #CED6E0;
+  font-size: 18px;
+  height: 50px;
+  width: 100%;
+  padding: 5px 12px;
+  transition: .3s ease all;
+  border-radius: 5px;
+}
+
+.card-form input:hover,
+.card-form select:hover {
+  border: 2px solid #93BDED;
+}
+
+.card-form input:focus,
+.card-form select:focus {
+  outline: rgb(4,4,4);
+  box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+}
+
+.card-form input {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.card-form .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-form .expire {
+  width: 100%;
+}
+
+.card-form .ccv {
+  min-width: 100px;
+}
+
+.card-form .group-select {
+  width: 100%;
+  margin-right: 15px;
+  position: relative;
+}
+
+.card-form select {
+  -webkit-appearance: none;
+}
+
+.card-form .group-select i {
+  position: absolute;
+  color: #232425;
+  top: 18px;
+  right: 15px;
+  transition: .3s ease all;
+}
+
+.card-form .group-select:hover i {
+  color: #93bfed;
+}
+
+.card-form .btn-submit {
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  color: #fff;
+  background: #2364d2;
+  box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4);
+  cursor: pointer;
+}
+
+.card-form .btn-submit:hover {
+  background: #1850b1;
+}
